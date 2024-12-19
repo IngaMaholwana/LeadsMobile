@@ -1,8 +1,8 @@
 body {
-    margin: 0;
+    margin: 0 auto;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    min-width: 400px;
+    max-width: 302px;
 }
 
 input {
@@ -11,6 +11,10 @@ input {
     box-sizing: border-box;
     border: 1px solid #5f9341;
     margin-bottom: 4px;
+}
+label{
+    color: green;
+    font-weight: 900;
 }
 
 button {
