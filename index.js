@@ -37,7 +37,9 @@ function render(leads) {
     ulEl.innerHTML = listItems
 }
 onValue(refenceleadsInDB, function(snapshot) {
-    console.log(snapshot)
+    const snapshotValue = snapshot.val() 
+    const leads = Object.values(snapshotValue)
+    console.log(leads)
     // if (snapshot.exists()) {
     //     let leads = Object.values(snapshot.val())
     //     render(leads)
