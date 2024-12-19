@@ -1,33 +1,27 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"
+import { getDatabase,
+    ref,
+    push,
+    onValue
+ } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
+
 
 const firebaseConfig = {
-    
+    databaseURL: "https://leadsmobile-aa637-default-rtdb.europe-west1.firebasedatabase.app/"    
 }
 
 const app = initializeApp(firebaseConfig)
+const database = getDatabase(app)
+const refenceleadsInDB = ref(database, "leads")
 
-console.log(app)
-
-let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
-const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
-const tabBtn = document.getElementById("tab-btn")
 
-if (leadsFromLocalStorage) {
-    myLeads = leadsFromLocalStorage
-    render(myLeads)
-}
 
-tabBtn.addEventListener("click", function(){    
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-        myLeads.push(tabs[0].url)
-        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-        render(myLeads)
-    })
-})
+
+
 
 function render(leads) {
     let listItems = ""
@@ -42,16 +36,24 @@ function render(leads) {
     }
     ulEl.innerHTML = listItems
 }
+onValue(refenceleadsInDB, function(snapshot) {
+    console.log(snapshot)
+    // if (snapshot.exists()) {
+    //     let leads = Object.values(snapshot.val())
+    //     render(leads)
+    // } else {
+    //     ulEl.innerHTML = "No leads yet"
+    // }
+})
 
 deleteBtn.addEventListener("dblclick", function() {
-    localStorage.clear()
-    myLeads = []
+    
+  
     render(myLeads)
 })
 
 inputBtn.addEventListener("click", function() {
-    myLeads.push(inputEl.value)
+    push(refenceleadsInDB, inputEl.value)
     inputEl.value = ""
-    localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-    render(myLeads)
+    
 })
