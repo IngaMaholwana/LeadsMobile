@@ -1,31 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Leads Tracker Mobile</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Leads Tracker Mobile | Save & Manage Links</title>
+        
+        <meta name="description" content="A fast, efficient mobile web application to save, track, and manage your important leads and URLs securely on your device. Developed by Inga Maholwana.">
+        <meta name="keywords" content="leads tracker, bookmark manager, link saver, mobile web app, Inga Maholwana, frontend developer, South Africa">
+        <meta name="author" content="Inga Maholwana">
+        <meta name="robots" content="index, follow">
+
+        <meta property="og:title" content="Leads Tracker Mobile">
+        <meta property="og:description" content="Easily save and manage your important web links locally on your device.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://ingamaholwana.github.io/PORTFOLIOWEBSITE/">
+        
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <link rel="stylesheet" href="index.css">
     </head>
 
     <body>
-        <label>Enter URL:</label>
-        <input type="text" id="input-el" placeholder="https://ingamaholwana.github.io/PORTFOLIOWEBSITE/">
-        <button id="input-btn">SAVE INPUT</button>
-       
-        <button id="delete-btn">DELETE ALL</button>
+        <main>
+            <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">
+                Leads Tracker Mobile App
+            </h1>
 
-        <div id="empty-state" class="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.3; margin-bottom: 12px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            <p>No leads yet</p>
-            <p class="small">Add a URL above to get started</p>
-        </div>
+            <label for="input-el">Enter URL:</label>
+            <input type="text" id="input-el" placeholder="https://github.com/IngaMaholwana" name="url-input">
+            
+            <button id="input-btn">SAVE INPUT</button>
+            <button id="delete-btn">DELETE ALL</button>
 
-        <ul id="ul-el">
-        </ul>
-        
+            <div id="empty-state" class="hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.3; margin-bottom: 12px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                <p>No leads yet</p>
+                <p class="small">Add a URL above to get started</p>
+            </div>
+
+            <ul id="ul-el">
+            </ul>
+        </main>
+
+        <footer class="dev-footer">
+            <p class="dev-name">Developed by <strong>Inga Maholwana</strong></p>
+            
+            <div class="dev-socials">
+                <a href="https://ingamaholwana.github.io/PORTFOLIOWEBSITE/" target="_blank" rel="noopener noreferrer">Portfolio</a> •
+                <a href="https://github.com/IngaMaholwana" target="_blank" rel="noopener noreferrer">GitHub</a> •
+                <a href="https://www.linkedin.com/in/inga-maholwana/" target="_blank" rel="noopener noreferrer">LinkedIn</a> •
+                <a href="https://www.youtube.com/@ingamaholwana2447" target="_blank" rel="noopener noreferrer">YouTube</a>
+            </div>
+        </footer>
+
         <script type="module" src="index.js"></script>
     </body>
 </html>
