@@ -12,6 +12,7 @@ input {
     border: 1px solid #5f9341;
     margin-bottom: 4px;
 }
+
 label{
     color: green;
     font-weight: 900;
@@ -23,6 +24,9 @@ button {
     padding: 10px 20px;
     border: 1px solid #5f9341;
     font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 5px;
 }
 
 #delete-btn {
@@ -36,12 +40,96 @@ ul {
     padding-left: 0;
 }
 
-li {
-    margin-top: 5px;
+/* --- New UI Styling for the Lead List --- */
+
+.hidden {
+    display: none !important;
 }
 
-a {
+#empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    color: #64748b;
+    text-align: center;
+}
+
+#empty-state p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#empty-state .small {
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.lead-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+    animation: fadeIn 0.3s ease-out backwards;
+}
+
+.lead-item:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.icon-link {
+    flex-shrink: 0;
     color: #5f9341;
 }
 
+.lead-item a {
+    flex-grow: 1;
+    color: #0f172a;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s;
+}
 
+.lead-item a:hover {
+    color: #5f9341;
+}
+
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    padding: 6px;
+    width: auto;
+    margin: 0;
+    opacity: 0;
+    transition: all 0.2s;
+    border-radius: 6px;
+}
+
+/* Show the trash icon when hovering over the list item */
+.lead-item:hover .remove-btn {
+    opacity: 1;
+}
+
+.remove-btn:hover {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}

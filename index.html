@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Leads Tracker Mobile</title>
@@ -11,12 +12,20 @@
 
     <body>
         <label>Enter URL:</label>
-        <input type="text" id="input-el" placeholder="https://Inga.com">
+        <input type="text" id="input-el" placeholder="https://ingamaholwana.github.io/PORTFOLIOWEBSITE/">
         <button id="input-btn">SAVE INPUT</button>
        
         <button id="delete-btn">DELETE ALL</button>
+
+        <div id="empty-state" class="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.3; margin-bottom: 12px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            <p>No leads yet</p>
+            <p class="small">Add a URL above to get started</p>
+        </div>
+
         <ul id="ul-el">
         </ul>
+        
         <script type="module" src="index.js"></script>
     </body>
 </html>
