@@ -1,19 +1,31 @@
 {
+  "id": "./",
   "name": "Leads Tracker",
   "short_name": "Leads",
+  "description": "Save and manage your important links.",
+  "start_url": "./",
+  "scope": "./",
   "icons": [
     {
-      "src": "android-chrome-192x192.png",
+      "src": "./android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "android-chrome-512x512.jpg",
+      "src": "./android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/jpeg"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#5f9341",
+  "background_color": "#f8fafc",
   "display": "standalone"
 }
